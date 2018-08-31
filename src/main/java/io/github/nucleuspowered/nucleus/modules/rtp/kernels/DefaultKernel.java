@@ -50,7 +50,7 @@ public class DefaultKernel implements RTPKernel {
                 return Optional.empty();
             }
 
-            return verifyLocation(targetLocation.get()) ? targetLocation : Optional.empty();
+            return targetLocation;
         }
 
         return Optional.empty();
@@ -73,10 +73,6 @@ public class DefaultKernel implements RTPKernel {
         }
 
         return world;
-    }
-
-    boolean verifyLocation(Location<World> world) {
-        return true;
     }
 
     @Override public String getId() {
