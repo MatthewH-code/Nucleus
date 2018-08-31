@@ -33,6 +33,8 @@ public class DefaultKernel implements RTPKernel {
             return Optional.empty();
         }
 
+        // Load the chunk first, this might help some population issues.
+        target.loadChunk(worldLocation.getChunkPosition(), true);
         Optional<Location<World>> targetLocation = Sponge.getTeleportHelper().getSafeLocation(worldLocation,
                 TeleportHelper.DEFAULT_HEIGHT,
                 TeleportHelper.DEFAULT_WIDTH,
